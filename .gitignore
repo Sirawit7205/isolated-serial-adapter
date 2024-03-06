@@ -47,3 +47,7 @@ nbproject/private/
 # Folder customization
 desktop.ini
 ibom.config.ini
+
+#JLCPCB plugin
+gerber/
+production_files/
