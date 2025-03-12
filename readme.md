@@ -4,7 +4,9 @@ This is an open-source KiCAD design files for a four-channel isolated USB-to-Ser
 
 ## Pictures
 
-![](pics/isolated_serial_adapter_front.png)
+![](pics/isolated_serial_adapter_assy.jpg)
+
+![](pics/isolated_serial_adapter_front_rev2.png)
 
 ## Features
 
@@ -19,12 +21,14 @@ This adapter is convenient when you want to connect multiple serial devices to y
 	- RS485 120 Ohms termination resistors (on/off)
 - Full Isolation
 	- All power and data signals are fully isolated between the USB and the serial side.
-	- ADM2483 dedicated RS485 isolation IC.
-	- ADM3251 dedicated RS232 isolated IC.
+	- CA-IS3088 dedicated RS485 isolation IC.
+	- MAX3243 dedicated RS232 isolated IC (250kbps max).
 	- Digital Isolator ICs for other signals.
+	- UART voltage level selector (2.5/2.7/3.0/3.3/5.0 V)
 	- 1W 5V isolated DC/DC converter.
 - Other Protection
 	- TVS diodes on all signals line, including the USB.
+	- Polyfuse on USB VBUS.
 - Intuitive Interfaces
 	- USB Type-C Connector
 	- Degson 3.5mm terminal blocks for serial channels
@@ -33,15 +37,20 @@ This adapter is convenient when you want to connect multiple serial devices to y
 	- USB connection good indicator
 	- Power indicators on both side of the isolation
 	- USB reset and flow control mode buttons
-	- Design to fit a Futurebox FB17 project box
+	- Design to fit a 90x125x40mm PLC project box
 	
 ## Revisions
 
-We are currently at Revision 1. Changelog is below:
+We are currently at Revision 2. Changelog is below:
 
 **Revision 1 (November 2022)**
  - Initial Design
  - U9 has wrong footprint (could still be soldered with some difficulties)
+ 
+**Revision 2 (March 2024)**
+ - Updated design for new enclosure
+ - Updated circuit for more functionalities.
+ - U11 has wrong Vref connection (do not populate)
 
 ## What is provided
 
@@ -55,6 +64,4 @@ Documentation is licensed under `SPDX-License-Identifier: CC-BY-SA-4.0`
 
 ## Ordering
 
-You can export gerbers from this project and order the board yourself. You can also use the link below to directly order from Aisler.
-
-https://aisler.net/p/QCJIQNDV
+You can export gerbers from this project and order the board yourself. Noted that this board must be manufactured with 1.2mm thickness to fit the enclosure.
